@@ -8,6 +8,19 @@ A jQuery plugin for sticky notification, tip, message, information, warning or s
 
 
 ## Usage
+### Import
+#### Development
+```html
+<link rel="stylesheet" href="src/jquery.sticky.css">
+<script type="text/javascript" src="src/jquery.sticky.js"></script>
+```
+
+#### Production
+```html
+<link rel="stylesheet" href="dist/jquery.sticky.css">
+<script type="text/javascript" src="dist/jquery.sticky.js"></script>
+```
+
 ```javascript
 $.sticky([options]);
 // or
@@ -80,7 +93,7 @@ $.sticky.dequeue(id);
 - animate.css ~3.2.0 (if `useAnimateCss` enabled)
 
 ## Live demo
-
+[jquery.sticky](http://tjatse.github.io/jquery/sticky)
 
 ## Examples
 ```javascript
@@ -103,7 +116,7 @@ $.sticky({
 });
 ```
 
-A completed usage is in the `index.html`, or take a further look into the `src/jquery.sticky.js` L40-80.
+A completed usage is in the `index.html`, or take a further look into the `src/jquery.sticky.js` [L40-80](https://github.com/Tjatse/sticky/blob/master/src/jquery.sticky.js#L40-L80).
 
 ## License
 Copyright 2014 Tjatse
