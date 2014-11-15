@@ -20,14 +20,16 @@ A jQuery plugin for sticky notification, tip, message, information, warning or s
   ```
 
 - Via bower
-  Install
-  ```
-  $ bower install tjatse.jquery.sticky
-  ```
-  Update
-  ```
-  $ bower update tjatse.jquery.sticky
-  ```
+
+  - Install
+    ```
+    $ bower install tjatse.jquery.sticky
+    ```
+
+  - Update
+    ```
+    $ bower update tjatse.jquery.sticky
+    ```
 
 ## Usage
 ```javascript
