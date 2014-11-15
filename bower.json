@@ -1,0 +1,20 @@
+{
+  "name": "jquery.sticky",
+  "version": "0.0.1",
+  "main": [
+    "src/jquery.sticky.js",
+    "src/jquery.sticky.css"
+  ],
+  "description": "A jQuery plugin for sticky notification, tip, message, information, warning or something else, super easy to use and have a nicely UI/UX.",
+  "license": "Apache, License 2.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Tjatse/sticky.git"
+  },
+  "ignore": [
+    "index.html",
+    "img",
+    "screenshot",
+    "README.md"
+  ]
+}
