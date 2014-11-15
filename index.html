@@ -1,0 +1,136 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8"/>
+  <title>jQuery sticky</title>
+
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+  <link rel="stylesheet" href="src/jquery.sticky.css">
+
+  <style type="text/css">
+    .panel {
+      width: 600px;
+      margin: 100px auto;
+    }
+
+    .panel .dropdown .dropdown-menu li {
+      padding: 1px 5px;
+    }
+
+    .panel .dropdown .dropdown-menu li a {
+      border-radius: 3px;
+    }
+
+    .sticky img {
+      float: left;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+<div class="panel panel-default">
+  <div class="panel-heading"><h4>Full usage of jQuery sticky</h4></div>
+  <div class="panel-body">
+    <div class="form-horizontal">
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Position:</label>
+
+        <div class="col-sm-5">
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                    aria-expanded="true">
+              <span>top-right</span>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a tabindex="-1" href="#">top-left</a></li>
+              <li><a tabindex="-1" href="#">top-mid</a></li>
+              <li class="active"><a tabindex="-1" href="#">top-right</a></li>
+              <li><a tabindex="-1" href="#">mid-left</a></li>
+              <li><a tabindex="-1" href="#">mid-mid</a></li>
+              <li><a tabindex="-1" href="#">mid-right</a></li>
+              <li><a tabindex="-1" href="#">bottom-left</a></li>
+              <li><a tabindex="-1" href="#">bottom-mid</a></li>
+              <li><a tabindex="-1" href="#">bottom-right</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Use animate.css:</label>
+
+        <div class="col-sm-5">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" checked>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-5">
+          <button class="btn btn-default btn-sticky">Sticky</button>
+          <button class="btn btn-warning btn-unsticky">Dequeue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <a href="https://github.com/Tjatse/sticky">jQuery sticky</a>
+    |
+    <a target="_blank" href="https://github.com/daneden/animate.css">animate.css</a>
+  </div>
+</div>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="src/jquery.sticky.js"></script>
+<script type="text/javascript">
+  $(window).ready(function(){
+    var dp = $('.dropdown');
+    dp.on('click', '.dropdown-menu li', function(){
+      var self = $(this);
+      if (self.hasClass('active')) {
+        return;
+      }
+      dp.find('.dropdown-menu li').removeClass('active');
+      self.addClass('active');
+      dp.find('button>span:eq(0)').text(self.text());
+    });
+
+    var icons = [
+      'img/noti.png',
+      'img/tip.png',
+      'img/finger.png'
+    ];
+    var bodies = [
+      'A jQuery plugin for <a href="https://github.com/Tjatse/sticky" target="_blank">sticky notification</a>, tip, message, information, warning or something else, super easy to use and have a nicely UI/UX.',
+      'Hello there, I am jquery.sticky \(^o^)/~.',
+      'Licensed under the Apache License, Version 2.0, feel free to use it.'
+    ];
+
+    $('button.btn-sticky').click(function(){
+      var seed = Math.ceil(Math.random() * 100000) % 3;
+
+      $.sticky({
+        icon         : icons[seed],
+        title        : 'Notification',
+        body         : bodies[seed],
+        position     : dp.find('button>span:eq(0)').text(),
+        useAnimateCss: $('input:checkbox').get(0).checked,
+        onShown      : function(id){
+          console.log('shown', id);
+        },
+        onHidden     : function(id){
+          console.log('hidden', id);
+        }
+      });
+    });
+    $('button.btn-unsticky').click(function(){
+      $.sticky.dequeue();
+    });
+  });
+
+</script>
+</body>
+</html>
