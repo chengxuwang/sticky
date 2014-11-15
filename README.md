@@ -36,6 +36,8 @@ A jQuery plugin for sticky notification, tip, message, information, warning or s
 $.sticky([options]);
 // or
 $.fn.sticky([options]);
+// Clean up
+$.sticky.dequeue([id]);
 ```
 
 ### Options
@@ -91,10 +93,11 @@ holderClassName: 'sticky-holder'
   ```
 
 - Feel free to edit the `src/jquery.sticky.css` to match your theme.
+- If the `sticky` was fired multi-times, the notifications will be queued to display.
 
 ## Clean house
 ```javascript
-$.sticky.dequeue(id);
+$.sticky.dequeue([id]);
 ```
 
 `id` is an optional argument, if it was provided, the specific notification will be dismissed, otherwise all of notifications will be hidden.
