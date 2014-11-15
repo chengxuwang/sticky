@@ -6,21 +6,30 @@ A jQuery plugin for sticky notification, tip, message, information, warning or s
 ## UI
 ![image](screenshot/tip.png)
 
+### Require
+- Development
+  ```html
+  <link rel="stylesheet" href="src/jquery.sticky.css">
+  <script type="text/javascript" src="src/jquery.sticky.js"></script>
+  ```
+
+- Production
+  ```html
+  <link rel="stylesheet" href="dist/jquery.sticky.css">
+  <script type="text/javascript" src="dist/jquery.sticky.js"></script>
+  ```
+
+- Via bower
+  Install
+  ```
+  $ bower install tjatse.jquery.sticky
+  ```
+  Update
+  ```
+  $ bower update tjatse.jquery.sticky
+  ```
 
 ## Usage
-### Import
-#### Development
-```html
-<link rel="stylesheet" href="src/jquery.sticky.css">
-<script type="text/javascript" src="src/jquery.sticky.js"></script>
-```
-
-#### Production
-```html
-<link rel="stylesheet" href="dist/jquery.sticky.css">
-<script type="text/javascript" src="dist/jquery.sticky.js"></script>
-```
-
 ```javascript
 $.sticky([options]);
 // or
