@@ -15,8 +15,8 @@ A jQuery plugin for sticky notification, tip, message, information, warning or s
 
 - Production
   ```html
-  <link rel="stylesheet" href="dist/jquery.sticky.css">
-  <script type="text/javascript" src="dist/jquery.sticky.js"></script>
+  <link rel="stylesheet" href="dist/jquery.sticky.min.css">
+  <script type="text/javascript" src="dist/jquery.sticky.min.js"></script>
   ```
 
 - Via bower
